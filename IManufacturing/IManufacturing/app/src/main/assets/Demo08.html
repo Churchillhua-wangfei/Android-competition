@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>购买原材料</title>
+</head>
+<style type="text/css">
+body{ background-color:#666;
+ 	
+}
+.all{   width:450px;
+ 		height:180px;
+		top:20%;
+		position:absolute;
+		left:33%;
+		background-color:#FFF;
+}
+label{ font-weight:800;
+  font-size:16px;
+}
+table{ margin-top:50px; 
+
+}
+.button{  width:100px;
+          height:35px;
+		  margin-top:15px;
+		  margin-left:160px;
+}
+.local{
+   margin-left: 76px;
+}
+.material{
+    margin-left: 10px;
+}
+.font{
+    margin-top: 10%;
+    margin-left: 25%;
+    font-size: 18px;
+    font-weight: 700;
+}
+.local2{
+    margin-left: 60px;
+}
+.material2{
+    margin-left:60px;
+
+}
+</style>
+<body>
+<div >  
+    <div class="font" id="h1">工场资金:300000</div>
+        <table width="400" align="center" class="all">
+            <tr>
+                <td><label class="local2">位置</label><input type="text" name="weizhi" size="20" class="local"/></td>
+            </tr>
+            <tr>
+                <td><label class="material2">供应原材料ID</label><input type="text" name="ID" size="20" class="material" id="h2"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="购买" class="button" onclick="gm()" /></td>
+            </tr>
+        </table>
+    
+</div>
+</body>
+</html>
+<script>
+    var a=300000;
+    function gm(){
+        var h2 =document.getElementById("h2").value;
+        var h1=document.getElementById("h1");
+        h1.innerHTML="工场资金："+(a-h2);
+        a=a-h2;
+
+
+    }
+
+</script>

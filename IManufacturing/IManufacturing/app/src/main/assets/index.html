@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="flexible.min.js">
+    </script>
+    <title>主页</title>
+</head>
+<style>
+    /* 初始化 */
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .clearfix:after,
+    .clearfix:before {
+        content: "";
+        display: block;
+        clear: both
+    }
+
+    /* body背景，规定字体 */
+    body {
+        background: url('./img/beijing.png') no-repeat;
+        background-size: cover;
+        color: #0f5000;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+    }
+
+    /* 头部区域 */
+    .indexTop {
+        width: 100%;
+        height: 50px;
+    }
+
+    .indexTop>img {
+        width: 100%;
+    }
+
+    /* 主体 */
+    .container {
+        width: 65%;
+        height: 65%;
+        position: relative;
+        left: 26%;
+        top: 10%;
+        overflow: hidden;
+        padding: 5px
+    }
+
+    .container li {
+        width: 15%;
+        text-align: center;
+        float: left;
+        margin: 10px;
+        padding: 10px;
+        position: relative;
+        overflow: hidden
+    }
+    .imgbox{
+        width:100%;
+        height:100%
+    }
+    .imgbox img{
+        width:70%;
+        height:70%;
+    }
+    .container li .imgbox,.container li .text{
+        margin-top: 20px;
+    }
+</style>
+<body>
+<!-- 头部 -->
+<div class="indexTop">
+    <img src="./img/top01.png" alt="">
+</div>
+<!-- 主体 -->
+<div class="container">
+    <ul class="clearfix">
+        <a href="#">
+            <li>
+                <div class="imgbox" id='1'><img src="./img/tubiao0007.png" alt=""></div>
+                <div class="text">工场灯光</div>
+            </li>
+        </a>
+        <li>
+            <div class="imgbox" id='2'><img src="./img/tubiao0001.png" alt=""></div>
+            <div class="text"><a href="#">工厂空调</a></div>
+        </li>
+        <a href="#">
+            <li>
+                <div class="imgbox" id='3'><img src="./img/tubiao0005.png" alt=""></div>
+                <div class="text">人才市场</div>
+            </li>
+        </a>
+        <a href="#">
+            <li>
+                <div class="imgbox" id='4'><img src="./img/tubiao0006.png" alt=""></div>
+                <div class="text">自动补人</div>
+            </li>
+        </a>
+    </ul>
+    <ul class="clearfix">
+        <a href="#">
+            <li>
+                <div class="imgbox" id='5'><img src="./img/tubiao0002.png" alt=""></div>
+                <div class="text">供货列表</div>
+            </li>
+        </a>
+        <li>
+            <div class="imgbox" id='6'><img src="./img/tubiao0003.png" alt=""></div>
+            <div class="text"><a href="#">购买原材料</a></div>
+        </li>
+        <li>
+            <div class="imgbox" id='7'><img src="./img/tubiao0003.png" alt=""></div>
+            <div class="text"><a href="#">问题车辆仓库</a></div>
+        </li>
+        <li>
+            <div class="imgbox" id='8'><img src="./img/tubiao0008.png" alt=""></div>
+            <div class="text"><a href="#">成品车辆仓库</a></div>
+        </li>
+    </ul>
+
+</div>
+
+<script>
+    document.getElementById('1').onclick = function () {
+        if(window.nativeMethod){
+            nativeMethod.startActivity();
+        }
+    };
+    document.getElementById('2').onclick = function () {
+        if(window.nativeMethod){
+            nativeMethod.startActivity02();
+        }
+    };
+     document.getElementById('3').onclick = function () {
+        if(window.nativeMethod){
+            nativeMethod.startActivity03();
+        }
+    };
+    document.getElementById('4').onclick = function () {
+        if(window.nativeMethod){
+            nativeMethod.startActivity07();
+        }
+    };
+     document.getElementById('5').onclick = function () {
+        if(window.nativeMethod){
+            nativeMethod.startActivity04();
+        }
+    };
+     document.getElementById('6').onclick = function () {
+        if(window.nativeMethod){
+            nativeMethod.startActivity08();
+        }
+    };
+     document.getElementById('7').onclick = function () {
+        if(window.nativeMethod){
+            nativeMethod.startActivity05();
+        }
+    };
+     document.getElementById('8').onclick = function () {
+        if(window.nativeMethod){
+            nativeMethod.startActivity06();
+        }
+    };
+  
+
+
+</script>
+
+</body>
+
+</html>

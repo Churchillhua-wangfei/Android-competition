@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style type="text/css">
+tbody {
+	text-align: center;
+}
+caption {
+	font-weight: 700;
+	font-size: 18px;
+}
+.huise{
+	height: 22px;
+    width: 22px;
+    position: absolute;
+
+
+	}
+.jiuse{
+	 height: 22px;
+    width: 22px;
+    position: absolute;
+
+}
+
+
+
+
+
+</style>
+
+<body bgcolor="white">
+<script type="text/javascript">
+    var tag=1;
+    function sortNumberAS(a, b)
+    {
+        return a - b
+    }
+    function sortNumberDesc(a, b)
+    {
+        return b-a
+    }
+
+    function SortTable(obj){
+        var td0s=document.getElementsByName("td0");
+        var td1s=document.getElementsByName("td1");
+        var td2s=document.getElementsByName("td2");
+
+        var tdArray0=[];
+        var tdArray1=[];
+        var tdArray2=[];
+
+        for(var i=0;i<td0s.length;i++){
+            tdArray0.push(td0s[i].innerHTML);
+        }
+        for(var i=0;i<td1s.length;i++){
+            tdArray1.push((td1s[i].innerHTML));
+        }
+        for(var i=0;i<td2s.length;i++){
+            tdArray2.push(parseInt(td2s[i].innerHTML));
+        }
+
+        var tds=document.getElementsByName("td"+obj.id.substr(2,1));
+        var columnArray=[];
+        for(var i=0;i<tds.length;i++){
+            columnArray.push(parseInt(tds[i].innerHTML));
+        }
+        var orginArray=[];
+        for(var i=0;i<columnArray.length;i++){
+            orginArray.push(columnArray[i]);
+        }
+        if(obj.className=="as"){
+            columnArray.sort(sortNumberAS);               //排序后的新值
+            obj.className="desc";
+        }else{
+            columnArray.sort(sortNumberDesc);               //排序后的新值
+            obj.className="as";
+        }
+
+
+        for(var i=0;i<columnArray.length;i++){
+            for(var j=0;j<orginArray.length;j++){
+                if(orginArray[j]==columnArray[i]){
+                    document.getElementsByName("td0")[i].innerHTML=tdArray0[j];
+                    document.getElementsByName("td1")[i].innerHTML=tdArray1[j];
+                    document.getElementsByName("td2")[i].innerHTML=tdArray2[j];
+
+                    orginArray[j]=null;
+                    break;
+                }
+            }
+        }
+    }
+
+</script>
+<table align="center" width="500" height="350" border="1" bordercolor="#999999" rules="all"
+       cellpadding="3" cellspacing="0">
+    <caption>
+        人才市场列表
+    </caption>
+    <tbody>
+    <tr>
+        <th>姓名</th>
+        <th id="th1" onclick="SortTable(this)" class="as">类型&nbsp;<img src="./img/huise.png"
+                                                                       class="huise"/></th>
+        <th id="th2" onclick="SortTable(this)" class="as">薪资&nbsp;<img src="./img/jiuse.png"
+                                                                       class="jiuse"/></th>
+    </tr>
+    <tr>
+        <td name="td0">雷大爷</td>
+        <td name="td1">程序员</td>
+        <td name="td2">6000</td>
+    </tr>
+    <tr>
+        <td name="td0">王大爷</td>
+        <td name="td1">程序员</td>
+        <td name="td2">6000</td>
+    </tr>
+    <tr>
+        <td name="td0">王大妈</td>
+        <td name="td1">清洁工</td>
+        <td name="td2">3000</td>
+    </tr>
+    <tr>
+        <td name="td0">李先生</td>
+        <td name="td1">质检员</td>
+        <td name="td2">7000</td>
+    </tr>
+    <tr>
+        <td name="td0">曾先生</td>
+        <td name="td1">质检员</td>
+        <td name="td2">7000</td>
+    </tr>
+    <tr>
+        <td name="td0">苏小姐</td>
+        <td name="td1">话务员</td>
+        <td name="td2">5000</td>
+    </tr>
+    <tr>
+        <td name="td0">秦先生</td>
+        <td name="td1">监督员</td>
+        <td name="td2">6000</td>
+    </tr>
+    <tr>
+        <td name="td0">刘先生</td>
+        <td name="td1">程序员</td>
+        <td name="td2">9000</td>
+    </tr>
+    <tr>
+        <td name="td0">李先生</td>
+        <td name="td1">程序员</td>
+        <td name="td2">8000</td>
+    </tr>
+    <tr>
+        <td name="td0">孔大妈</td>
+        <td name="td1">清洁员</td>
+        <td name="td2">3500</td>
+    </tr>
+    <tr>
+        <td name="td0">陈先生</td>
+        <td name="td1">程序员</td>
+        <td name="td2">9000</td>
+    </tr>
+    <tr>
+        <td name="td0">李大爷</td>
+        <td name="td1">门卫</td>
+        <td name="td2">2000</td>
+    </tr>
+    <tr>
+        <td name="td0">曾大爷</td>
+        <td name="td1">保安</td>
+        <td name="td2">3000</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
+
